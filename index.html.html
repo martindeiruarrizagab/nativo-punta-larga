@@ -12,25 +12,23 @@
     .glass-panel { background: rgba(30, 41, 59, 0.6); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.05); border-radius: 1rem; }
     .text-gradient-emerald { background: linear-gradient(to right, #10B981, #34D399); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
     .chart-container { position: relative; width: 100%; height: 400px; }
-    .toggle-btn { transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
+    .toggle-btn { transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); cursor: pointer; }
     .toggle-btn.active { background-color: #10B981; color: white; box-shadow: 0 4px 14px 0 rgba(16, 185, 129, 0.3); }
-    .map-container { position: relative; border-radius: 1rem; overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.1); background: #1e293b; }
-    .img-hover { transition: transform 0.5s ease; }
-    .img-hover:hover { transform: scale(1.05); }
-    .pulse-marker { position: absolute; width: 16px; height: 16px; background: #10B981; border-radius: 50%; box-shadow: 0 0 15px #10B981; animation: pulse 2s infinite; z-index: 20; }
-    @keyframes pulse { 0% { transform: scale(1); opacity: 1; } 50% { transform: scale(1.6); opacity: 0.4; } 100% { transform: scale(1); opacity: 1; } }
+    .img-hover { transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1); }
+    .img-hover:hover { transform: scale(1.08); }
+    .blueprint-bg { background-image: radial-gradient(#1e293b 1px, transparent 1px); background-size: 20px 20px; }
     
-    .img-fallback {
+    /* Fallback para imágenes no encontradas */
+    .img-placeholder {
         display: flex;
         align-items: center;
         justify-content: center;
-        background: linear-gradient(45deg, #1e293b, #334155);
-        color: #64748b;
+        background: #1e293b;
+        color: #475569;
         font-size: 10px;
-        font-weight: bold;
-        text-transform: uppercase;
         text-align: center;
         padding: 20px;
+        border: 1px dashed #334155;
     }
 </style>
 </head>
@@ -41,7 +39,6 @@
         <div class="font-extrabold text-2xl tracking-tighter uppercase">NPL<span class="text-[#10B981]">.</span></div>
         <div class="hidden md:flex space-x-6 text-[10px] font-bold uppercase tracking-widest text-gray-400">
             <a href="#proyecto" class="hover:text-emerald-400 transition">Proyecto</a>
-            <a href="#entorno" class="hover:text-emerald-400 transition">Entorno</a>
             <a href="#mercado" class="hover:text-emerald-400 transition">Mercado</a>
             <a href="#finanzas" class="hover:text-emerald-400 transition">Finanzas</a>
             <a href="#arquitectura" class="hover:text-emerald-400 transition">Arquitectura</a>
@@ -57,21 +54,21 @@
 
     <!-- Hero Section -->
     <section id="proyecto" class="relative rounded-3xl overflow-hidden min-h-[600px] flex items-center justify-center text-center p-8 bg-slate-900">
-        <img src="Nativo-Punta-Larga-05-1-2048x1151.jpg" onerror="this.style.display='none'" class="absolute inset-0 w-full h-full object-cover opacity-40" alt="Vistas Volcanes">
+        <img src="Nativo-Punta-Larga-05-1-2048x1151.jpg" alt="Vista Volcanes" class="absolute inset-0 w-full h-full object-cover opacity-50" onerror="this.style.display='none'">
         <div class="absolute inset-0 bg-gradient-to-b from-[#0F172A] via-transparent to-[#0F172A]"></div>
         
         <div class="relative z-10 space-y-6">
-            <div class="inline-block px-4 py-1 rounded-full border border-emerald-500/30 bg-emerald-500/10 text-emerald-400 text-[10px] font-bold tracking-widest uppercase italic">Oportunidad de Inversión Frutillar</div>
-            <h1 class="text-5xl md:text-8xl font-extrabold tracking-tight">Desarrollo <span class="text-gradient-emerald">Casas NPL</span></h1>
-            <p class="text-gray-300 max-w-2xl mx-auto text-lg leading-relaxed font-light">Casas de autor en el entorno más exclusivo de Punta Larga. Gestión integral para maximizar rentabilidad sobre capital.</p>
+            <div class="inline-block px-4 py-1 rounded-full border border-emerald-500/30 bg-emerald-500/10 text-emerald-400 text-[10px] font-bold tracking-widest uppercase">Inversión Nativo Punta Larga</div>
+            <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight">Estrategia <span class="text-gradient-emerald">High-End</span></h1>
+            <p class="text-gray-300 max-w-2xl mx-auto text-lg leading-relaxed font-light">Desarrollo de casas de autor en Frutillar. Gestión integral para maximizar el retorno sobre el capital aportado.</p>
             
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12 max-w-5xl mx-auto">
-                <div class="glass-panel p-6 border-t-2 border-gray-500">
-                    <div class="text-gray-500 text-[10px] font-bold uppercase mb-1">Equity (Construcción)</div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12 max-w-4xl mx-auto">
+                <div class="glass-panel p-6 border-t-2 border-gray-600">
+                    <div class="text-gray-500 text-[10px] font-bold uppercase mb-1">Costo Obra</div>
                     <div class="text-3xl font-black text-white">7.460 <span class="text-lg font-normal text-gray-500">UF</span></div>
                 </div>
                 <div class="glass-panel p-6 border-t-2 border-amber-500">
-                    <div class="text-gray-500 text-[10px] font-bold uppercase mb-1">Suelo (Aporte)</div>
+                    <div class="text-gray-500 text-[10px] font-bold uppercase mb-1">Costo Suelo</div>
                     <div id="hero-suelo" class="text-3xl font-black text-white">4.000 <span class="text-lg font-normal text-gray-500">UF</span></div>
                 </div>
                 <div class="glass-panel p-6 border-t-2 border-emerald-500 bg-emerald-500/5">
@@ -82,214 +79,117 @@
         </div>
     </section>
 
-    <!-- Ubicación y Plusvalía -->
-    <section id="entorno" class="space-y-12 scroll-mt-20">
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div class="space-y-8">
-                <h2 class="text-3xl font-extrabold italic">Ubicación <span class="text-emerald-400">Estratégica</span></h2>
-                <div class="grid grid-cols-1 gap-4 text-sm">
-                    <div class="glass-panel p-5 border-l-4 border-emerald-500 bg-emerald-500/5">
-                        <h4 class="font-bold text-white uppercase text-xs mb-1">Hub Educacional</h4>
-                        <p class="text-gray-400 leading-relaxed text-[11px]">Cercanía con <b>Heritage School</b>, <b>Kopernikus</b> y el <b>Colegio Puerto Varas</b>.</p>
-                    </div>
-                    <div class="glass-panel p-5 border-l-4 border-indigo-500">
-                        <h4 class="font-bold text-white uppercase text-xs mb-1">Ocio y Deporte</h4>
-                        <p class="text-gray-400 leading-relaxed text-[11px]">A pasos del <b>Club de Golf Patagonia Virgin</b> y el <b>Club Gimnástico Alemán</b> de Llanquihue.</p>
-                    </div>
-                    <div class="glass-panel p-5 border-l-4 border-amber-500">
-                        <h4 class="font-bold text-white uppercase text-xs mb-1">Plusvalía Punta Larga</h4>
-                        <p class="text-gray-400 leading-relaxed text-[11px]">Zona consolidada como el nuevo destino Nº1 de inversión residencial en la cuenca del Llanquihue.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="map-container h-[400px] flex items-center justify-center">
-                <img src="Captura de pantalla 2026-03-17 211434.png" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'" class="w-full h-full object-cover brightness-75" alt="Mapa Ubicación">
-                <div class="img-fallback absolute inset-0 hidden flex-col">
-                    <svg class="w-12 h-12 mb-2 opacity-20" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
-                    [Mapa de Ubicación: Punta Larga]
-                </div>
-                <div class="pulse-marker" style="top: 48%; left: 8%;"></div>
+    <!-- Galería de Entorno -->
+    <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div class="group relative h-64 rounded-2xl overflow-hidden bg-slate-800">
+            <img src="Nativo-Punta-Larga-01-1-2048x1151.jpg" class="w-full h-full object-cover img-hover" alt="Acceso" onerror="this.style.display='none'">
+            <div class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/80 to-transparent">
+                <p class="text-[10px] font-bold uppercase tracking-widest">Acceso Controlado</p>
             </div>
         </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div class="glass-panel overflow-hidden group">
-                <div class="h-48 overflow-hidden bg-slate-800 flex items-center justify-center">
-                    <img src="Nativo-Punta-Larga-01-1-2048x1151.jpg" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'" class="w-full h-full object-cover img-hover" alt="Acceso Nativo">
-                    <div class="img-fallback hidden">[Vista Acceso Controlado]</div>
-                </div>
-                <div class="p-4"><p class="text-[10px] font-bold text-gray-400 uppercase">Urbanización: Acceso Controlado</p></div>
+        <div class="group relative h-64 rounded-2xl overflow-hidden bg-slate-800">
+            <img src="Nativo-Punta-Larga-6-2048x1151.jpg" class="w-full h-full object-cover img-hover" alt="Urbanización" onerror="this.style.display='none'">
+            <div class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/80 to-transparent">
+                <p class="text-[10px] font-bold uppercase tracking-widest">Caminos Pavimentados</p>
             </div>
-            <div class="glass-panel overflow-hidden group">
-                <div class="h-48 overflow-hidden bg-slate-800 flex items-center justify-center">
-                    <img src="Nativo-Punta-Larga-6-2048x1151.jpg" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'" class="w-full h-full object-cover img-hover" alt="Caminos Internos">
-                    <div class="img-fallback hidden">[Caminos Pavimentados]</div>
-                </div>
-                <div class="p-4"><p class="text-[10px] font-bold text-gray-400 uppercase">Infraestructura: Caminos Pavimentados</p></div>
+        </div>
+        <div class="group relative h-64 rounded-2xl overflow-hidden bg-slate-800">
+            <img src="Nativo-Punta-Larga-07-1-2048x1151.jpg" class="w-full h-full object-cover img-hover" alt="Vistas" onerror="this.style.display='none'">
+            <div class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/80 to-transparent">
+                <p class="text-[10px] font-bold uppercase tracking-widest">Vistas a Volcanes</p>
             </div>
-            <div class="glass-panel overflow-hidden group">
-                <div class="h-48 overflow-hidden bg-slate-800 flex items-center justify-center">
-                    <img src="Nativo-Punta-Larga-07-1-2048x1151.jpg" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'" class="w-full h-full object-cover img-hover" alt="Vistas de Terrenos">
-                    <div class="img-fallback hidden">[Vista Volcanes desde Terreno]</div>
-                </div>
-                <div class="p-4"><p class="text-[10px] font-bold text-gray-400 uppercase">Entorno: Vistas a Volcanes</p></div>
+        </div>
+        <div class="group relative h-64 rounded-2xl overflow-hidden bg-slate-800">
+            <img src="Nativo-Punta-Larga-04-1-2048x2048.jpg" class="w-full h-full object-cover img-hover" alt="Paisajismo" onerror="this.style.display='none'">
+            <div class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/80 to-transparent">
+                <p class="text-[10px] font-bold uppercase tracking-widest">Entorno Natural</p>
             </div>
         </div>
     </section>
 
-    <!-- Validación de Mercado -->
-    <section id="mercado" class="space-y-12 scroll-mt-20 border-t border-gray-800 pt-16">
-        <div class="text-center">
-            <h2 class="text-3xl font-extrabold italic">Validación de <span class="text-indigo-400">Mercado</span></h2>
-            <p class="text-gray-500 text-[10px] font-bold uppercase tracking-widest mt-2">Datos reales y fuentes del sector</p>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div class="glass-panel p-6 text-center space-y-4">
-                <div class="text-indigo-400 text-3xl font-black italic">Toctoc.com</div>
-                <p class="text-xs text-gray-300">Escrituración actual para casas de ~200 m² en Frutillar: <b>13.500 - 16.500 UF</b>.</p>
-                <div class="text-[9px] font-bold text-gray-500 uppercase">Escrituración Real</div>
-            </div>
-            <div class="glass-panel p-6 text-center space-y-4 border-b-4 border-indigo-500">
-                <div class="text-indigo-400 text-3xl font-black italic">CChC</div>
-                <p class="text-xs text-gray-300">MAS (Meses para agotar stock) estable entre <b>8 y 12 meses</b> para segmento premium.</p>
-                <div class="text-[9px] font-bold text-gray-500 uppercase">Absorción Regional</div>
-            </div>
-            <div class="glass-panel p-6 text-center space-y-4">
-                <div class="text-indigo-400 text-3xl font-black italic">Neorentas</div>
-                <p class="text-xs text-gray-300">Valida migración por calidad de vida hacia el modelo <b>Single Family</b>.</p>
-                <div class="text-[9px] font-bold text-gray-500 uppercase">Reporte de Tendencia</div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Galería -->
-    <section class="grid grid-cols-2 md:grid-cols-4 gap-4">
-        <div class="h-48 rounded-xl overflow-hidden bg-slate-800 flex items-center justify-center">
-            <img src="Nativo-Punta-Larga-04-1-2048x2048.jpg" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'" class="w-full h-full object-cover hover:opacity-80 transition" alt="Vistas Nativo">
-            <div class="img-fallback hidden">[Paisaje Nativo]</div>
-        </div>
-        <div class="h-48 rounded-xl overflow-hidden bg-slate-800 flex items-center justify-center">
-            <img src="Nativo-Punta-Larga-9-2048x1365.jpg" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'" class="w-full h-full object-cover hover:opacity-80 transition" alt="Paisaje Sur">
-            <div class="img-fallback hidden">[Paisaje Cuenca]</div>
-        </div>
-        <div class="h-48 rounded-xl overflow-hidden bg-slate-800 flex items-center justify-center">
-            <img src="Nativo-Punta-Larga-10-1365x2048.jpg" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'" class="w-full h-full object-cover hover:opacity-80 transition" alt="Senda Bosque">
-            <div class="img-fallback hidden">[Bosque Nativo]</div>
-        </div>
-        <div class="relative rounded-xl overflow-hidden h-48 flex items-center justify-center bg-slate-900 border border-slate-700">
-            <img src="Captura de pantalla 2026-03-17 212644.jpg" onerror="this.style.display='none'" class="absolute inset-0 w-full h-full object-cover opacity-50" alt="Inspiración">
-            <span class="relative z-10 text-[10px] font-black uppercase tracking-tighter text-white text-center">Destino <br>Punta Larga</span>
-        </div>
-    </section>
-
-    <!-- Finanzas -->
-    <section id="finanzas" class="space-y-12 scroll-mt-20 border-t border-gray-800 pt-16">
-        <div class="text-center">
-            <h2 class="text-3xl font-extrabold italic">Viabilidad y <span class="text-amber-500">Retornos</span></h2>
-            <p class="text-gray-400 text-xs mt-2 uppercase tracking-widest font-bold">Análisis neto considerando honorarios de gestión y arquitectura</p>
+    <!-- Análisis Financiero -->
+    <section id="finanzas" class="space-y-12 scroll-mt-20">
+        <div class="text-center space-y-2">
+            <h2 class="text-3xl font-extrabold">Estructura de <span class="text-emerald-400">Retornos</span></h2>
+            <p class="text-gray-500 text-[10px] font-bold uppercase tracking-widest">Proyección neta para el inversionista</p>
         </div>
 
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
             <div class="lg:col-span-2 glass-panel p-8">
-                <div class="chart-container"><canvas id="mainChart"></canvas></div>
+                <div class="chart-container">
+                    <canvas id="mainChart"></canvas>
+                </div>
             </div>
             <div class="space-y-4">
-                <div class="glass-panel p-6 border-l-4 border-emerald-500 bg-emerald-500/5">
-                    <h4 class="text-xs font-bold text-gray-500 uppercase mb-4 tracking-wider">Cierre Económico (UF)</h4>
+                <div class="glass-panel p-6 border-l-4 border-emerald-500">
+                    <h4 class="text-xs font-bold text-gray-500 uppercase mb-4">Resumen UF por Unidad</h4>
                     <div class="space-y-4">
-                        <div class="flex justify-between items-center border-b border-gray-800/50 pb-2">
-                            <span class="text-xs font-bold text-white uppercase">Venta Estimada</span>
-                            <span class="font-black text-white">14.000</span>
+                        <div class="flex justify-between border-b border-white/5 pb-2">
+                            <span class="text-xs text-gray-400 uppercase">Precio Venta Est.</span>
+                            <span class="font-bold">14.000</span>
                         </div>
-                        <div class="flex justify-between items-center border-b border-gray-800/50 pb-2">
-                            <span class="text-xs font-bold text-gray-400 uppercase">H. Gestión (M)</span>
+                        <div class="flex justify-between border-b border-white/5 pb-2">
+                            <span class="text-xs text-gray-400 uppercase">H. Gestión</span>
                             <span id="h-martin" class="font-bold text-amber-500">500.0</span>
                         </div>
-                        <div class="flex justify-between items-center border-b border-gray-800/50 pb-2">
-                            <span class="text-xs font-bold text-gray-400 uppercase">H. Arquitectura (T)</span>
+                        <div class="flex justify-between border-b border-white/5 pb-2">
+                            <span class="text-xs text-gray-400 uppercase">H. Arquitectura</span>
                             <span id="h-tomas" class="font-bold text-indigo-400">881.0</span>
                         </div>
-                        <div class="pt-4 flex justify-between items-end">
-                            <span class="text-[10px] font-bold text-gray-400 uppercase leading-none">Utilidad Neta<br>Inversionista</span>
-                            <div class="text-right">
-                                <div id="util-net" class="text-4xl font-black text-emerald-400">1.159</div>
-                                <div class="text-[9px] font-bold text-gray-500 uppercase">UF por unidad</div>
-                            </div>
+                        <div class="pt-4">
+                            <div class="text-[10px] font-bold text-emerald-400 uppercase mb-1">Utilidad Neta Inversionista</div>
+                            <div id="util-net" class="text-5xl font-black">1.159</div>
                         </div>
                     </div>
                 </div>
-                <div class="p-5 rounded-xl border border-gray-800 italic">
-                    <p id="escala-text" class="text-[11px] text-gray-500 leading-relaxed">
-                        Desarrollar una casa permite validar el producto, pero la escala de 3 casas optimiza el costo del suelo y los incentivos comerciales.
+                <div class="p-4 bg-emerald-500/5 rounded-xl border border-emerald-500/20">
+                    <p id="escala-text" class="text-[11px] text-gray-400 leading-relaxed italic">
+                        "El modelo de 3 casas permite diluir costos fijos y optimizar la compra del suelo, elevando el ROC al 21.1%."
                     </p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Arquitectura -->
-    <section id="arquitectura" class="space-y-12 scroll-mt-20 border-t border-gray-800 pt-16">
+    <!-- Arquitectura - Planta Técnica -->
+    <section id="arquitectura" class="space-y-12 scroll-mt-20 pt-16 border-t border-gray-800">
         <div class="flex flex-col md:flex-row justify-between items-end gap-6">
-            <div class="max-w-2xl">
-                <h2 class="text-4xl font-extrabold italic mb-4">Arquitectura de <span class="text-emerald-400">Autor</span></h2>
-                <p class="text-gray-400 text-sm">Diseño optimizado por <b>TDI ARQ</b>. Una propuesta que equilibra la eficiencia constructiva con la nobleza de los materiales del sur.</p>
+            <div>
+                <h2 class="text-3xl font-extrabold italic">Planta <span class="text-emerald-400">Proyecto VI</span></h2>
+                <p class="text-gray-400 text-xs mt-2 uppercase tracking-widest font-bold">Diseño por TDI ARQ — 140 m² Útiles</p>
             </div>
-            <div class="text-right">
-                <span class="text-[10px] font-bold text-gray-500 uppercase tracking-widest">Anteproyecto v.6</span>
-                <span class="block text-xl font-black text-white">140 m² + Terrazas</span>
+            <div class="text-right hidden md:block">
+                <p class="text-[10px] font-bold text-gray-500 uppercase">Escala 1:100</p>
+                <p class="text-sm font-bold">Marzo 2026</p>
             </div>
         </div>
 
-        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            <div class="lg:col-span-2 glass-panel p-4 overflow-hidden bg-white/5 border-white/10 group">
-                <div class="relative overflow-hidden rounded-lg bg-slate-100/10 min-h-[400px] flex items-center justify-center">
-                    <div class="absolute inset-0 flex flex-col items-center justify-center text-slate-500 p-12 text-center">
-                        <svg class="w-16 h-16 mb-4 opacity-30" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
-                        <p class="text-sm font-bold uppercase tracking-widest mb-1">Visualización de Planta Técnica</p>
-                        <p class="text-[10px] italic">Archivo: 160326_ANTEPROYECTO NATIVO-PLANTA TIPO.pdf</p>
-                        <div class="mt-8 grid grid-cols-3 gap-4 w-full opacity-20">
-                            <div class="h-2 bg-slate-400 rounded"></div><div class="h-2 bg-slate-400 rounded"></div><div class="h-2 bg-slate-400 rounded"></div>
-                            <div class="h-32 col-span-2 border-2 border-slate-400 border-dashed rounded"></div>
-                            <div class="h-32 border-2 border-slate-400 border-dashed rounded"></div>
-                        </div>
-                    </div>
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-6">
-                        <p class="text-xs font-medium text-white">Planta tipo: Distribución modular con núcleo central de servicios (3D / 2B).</p>
-                    </div>
-                </div>
-            </div>
-            <div class="space-y-4">
-                <div class="glass-panel p-6 space-y-6 border-l-2 border-emerald-500">
-                    <div>
-                        <h4 class="text-xs font-black text-emerald-400 uppercase tracking-widest mb-3">Distribución Programa</h4>
-                        <ul class="space-y-3">
-                            <li class="flex items-center gap-3 text-sm text-gray-300">
-                                <span class="w-5 h-5 flex items-center justify-center bg-emerald-500/20 rounded text-[10px] font-bold">01</span>
-                                <b>Master Suite</b> con baño privado
-                            </li>
-                            <li class="flex items-center gap-3 text-sm text-gray-300">
-                                <span class="w-5 h-5 flex items-center justify-center bg-emerald-500/20 rounded text-[10px] font-bold">02</span>
-                                <b>Dormitorios secundarios</b> amplios
-                            </li>
-                            <li class="flex items-center gap-3 text-sm text-gray-300">
-                                <span class="w-5 h-5 flex items-center justify-center bg-emerald-500/20 rounded text-[10px] font-bold">03</span>
-                                <b>Área Social Integrada</b> (Cocina Americana)
-                            </li>
-                            <li class="flex items-center gap-3 text-sm text-gray-300">
-                                <span class="w-5 h-5 flex items-center justify-center bg-emerald-500/20 rounded text-[10px] font-bold">04</span>
-                                <b>Terraza Perimetral</b> con vistas panorámicas
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="pt-6 border-t border-gray-800">
-                        <h4 class="text-xs font-black text-gray-400 uppercase tracking-widest mb-3">Características Clave</h4>
-                        <div class="grid grid-cols-2 gap-3 text-[10px] font-bold text-gray-300 uppercase">
-                            <div class="p-2 bg-gray-800/40 rounded">3 Dormitorios</div>
-                            <div class="p-2 bg-gray-800/40 rounded">2 Baños</div>
-                            <div class="p-2 bg-gray-800/40 rounded">Logia Separada</div>
-                            <div class="p-2 bg-gray-800/40 rounded">140 m² útiles</div>
-                        </div>
+        <div class="glass-panel p-4 blueprint-bg relative overflow-hidden group">
+            <!-- Simulación de la planta técnica del PDF -->
+            <div class="relative w-full aspect-[16/9] bg-white/5 rounded-lg border border-white/10 flex items-center justify-center p-4">
+                <svg viewBox="0 0 1000 450" class="w-full h-full opacity-60 stroke-emerald-400 fill-none stroke-[1.5]">
+                    <!-- Estructura Principal -->
+                    <rect x="50" y="50" width="700" height="250" />
+                    <!-- Habitaciones -->
+                    <rect x="50" y="50" width="180" height="120" /> <!-- Dorm 1 -->
+                    <rect x="50" y="180" width="180" height="120" /> <!-- Dorm 2 -->
+                    <rect x="550" y="50" width="200" height="180" /> <!-- Master -->
+                    <rect x="630" y="230" width="120" height="70" /> <!-- Baño Master -->
+                    <!-- Area Social -->
+                    <path d="M 230 50 L 230 300 M 550 50 L 550 300" stroke-dasharray="5 5" />
+                    <!-- Terrazas -->
+                    <rect x="30" y="30" width="940" height="390" stroke-dasharray="8 4" opacity="0.3" />
+                    <!-- Anotaciones -->
+                    <text x="350" y="180" fill="#10B981" stroke="none" class="text-[14px] font-black uppercase tracking-widest">Living / Dining / Kitchen</text>
+                    <text x="80" y="110" fill="white" stroke="none" class="text-[10px] font-bold">BEDROOM 01</text>
+                    <text x="80" y="240" fill="white" stroke="none" class="text-[10px] font-bold">BEDROOM 02</text>
+                    <text x="580" y="110" fill="white" stroke="none" class="text-[10px] font-bold">MASTER SUITE</text>
+                </svg>
+                
+                <div class="absolute inset-0 bg-gradient-to-t from-[#0F172A] via-transparent to-transparent flex items-end p-8">
+                    <div class="max-w-md">
+                        <h4 class="text-sm font-bold text-white uppercase mb-2">Distribución Funcional</h4>
+                        <p class="text-[10px] text-gray-400 leading-relaxed">Programa modular que optimiza la envolvente térmica y prioriza la apertura visual hacia el Lago Llanquihue. Incluye 3D/2B + Logia y amplia terraza perimetral.</p>
                     </div>
                 </div>
             </div>
@@ -298,25 +198,25 @@
 
 </main>
 
-<footer class="max-w-7xl mx-auto px-4 py-16 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center gap-8 text-center md:text-left">
+<footer class="max-w-7xl mx-auto px-4 py-20 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center gap-8">
     <div class="space-y-2">
-        <div class="font-black text-xl tracking-tighter uppercase">NPL<span class="text-[#10B981]">.</span></div>
-        <p class="text-gray-500 text-[10px] font-bold uppercase tracking-widest">Inversión Nativo Punta Larga — 2024</p>
+        <div class="font-black text-2xl tracking-tighter uppercase">NPL<span class="text-[#10B981]">.</span></div>
+        <p class="text-gray-500 text-[10px] font-bold uppercase tracking-widest">Frutillar, Región de los Lagos</p>
     </div>
-    <div class="flex gap-12">
-        <div class="space-y-1">
-            <p class="text-[10px] font-bold text-gray-500 uppercase">Arquitectura & Obra</p>
+    <div class="flex gap-12 text-center md:text-left">
+        <div>
+            <p class="text-[10px] font-bold text-gray-500 uppercase mb-1">Arquitectura</p>
             <p class="text-xs font-bold text-white">Tomás de Iruarrizaga</p>
         </div>
-        <div class="space-y-1">
-            <p class="text-[10px] font-bold text-gray-500 uppercase">Gestión Comercial</p>
+        <div>
+            <p class="text-[10px] font-bold text-gray-500 uppercase mb-1">Gestión</p>
             <p class="text-xs font-bold text-white">Martín de Iruarrizaga</p>
         </div>
     </div>
 </footer>
 
 <script>
-    Chart.defaults.color = '#9CA3AF';
+    Chart.defaults.color = '#64748b';
     Chart.defaults.font.family = "'Inter', sans-serif";
 
     let chart;
@@ -327,7 +227,7 @@
             hMartin: 500.0,
             hTomas: 881.0,
             utilNeta: 1159,
-            escalaText: "Escenario base para una sola unidad: Estructura conservadora con suelo a precio de mercado.",
+            escalaText: "El modelo para 1 casa es el escenario base, ideal para validar terminaciones y demanda inicial en el loteo.",
             chartData: [7460, 4000, 500, 881, 1159]
         },
         multi: {
@@ -336,8 +236,8 @@
             hMartin: 454.2,
             hTomas: 1095.0,
             utilNeta: 1571,
-            escalaText: "¡Optimización por Escala! Desarrollando 3 unidades se reduce el costo de suelo y se mejora la eficiencia de gestión.",
-            chartData: [7460, 3420, 454, 1095, 1571]
+            escalaText: "¡Optimización por Escala! El costo de suelo se reduce por volumen y los honorarios se vuelven más eficientes por unidad.",
+            chartData: [7460, 3420, 454.2, 1095, 1571]
         }
     };
 
@@ -351,7 +251,10 @@
         document.getElementById('h-tomas').innerText = s.hTomas.toFixed(1);
         document.getElementById('util-net').innerText = s.utilNeta.toLocaleString();
         document.getElementById('escala-text').innerText = s.escalaText;
-        chart.data.datasets.forEach((dataset, i) => { dataset.data = [s.chartData[i]]; });
+        
+        chart.data.datasets.forEach((dataset, i) => {
+            dataset.data = [s.chartData[i]];
+        });
         chart.update();
     }
 
@@ -360,13 +263,13 @@
         chart = new Chart(ctx, {
             type: 'bar',
             data: {
-                labels: ['Estructura de Capital (UF)'],
+                labels: ['Desglose de Capital (UF)'],
                 datasets: [
-                    { label: 'Construcción', data: [7460], backgroundColor: '#334155', stack: 'A' },
+                    { label: 'Obra', data: [7460], backgroundColor: '#334155', stack: 'A' },
                     { label: 'Suelo', data: [4000], backgroundColor: '#1E293B', stack: 'A' },
-                    { label: 'H. Gestión', data: [500], backgroundColor: '#F59E0B', stack: 'A' },
-                    { label: 'H. Arquitectura', data: [881], backgroundColor: '#6366F1', stack: 'A' },
-                    { label: 'Utilidad Neta', data: [1159], backgroundColor: '#10B981', stack: 'A', borderRadius: { topLeft: 12, topRight: 12 } }
+                    { label: 'G. Martín', data: [500], backgroundColor: '#F59E0B', stack: 'A' },
+                    { label: 'A. Tomás', data: [881], backgroundColor: '#6366F1', stack: 'A' },
+                    { label: 'Utilidad Neta', data: [1159], backgroundColor: '#10B981', stack: 'A', borderRadius: 8 }
                 ]
             },
             options: {
@@ -374,11 +277,10 @@
                 maintainAspectRatio: false,
                 scales: {
                     x: { stacked: true, grid: { display: false } },
-                    y: { stacked: true, max: 15000, grid: { color: 'rgba(255,255,255,0.05)' }, ticks: { callback: v => v.toLocaleString() + ' UF' } }
+                    y: { stacked: true, grid: { color: 'rgba(255,255,255,0.05)' }, ticks: { callback: v => v + ' UF' } }
                 },
                 plugins: {
-                    legend: { position: 'bottom', labels: { usePointStyle: true, padding: 25, font: { size: 10, weight: 'bold' } } },
-                    tooltip: { backgroundColor: '#1E293B', padding: 12, cornerRadius: 8 }
+                    legend: { position: 'bottom', labels: { usePointStyle: true, padding: 20, font: { size: 10, weight: '600' } } }
                 }
             }
         });
